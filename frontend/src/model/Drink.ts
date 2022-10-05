@@ -3,7 +3,7 @@ type Drink = {
 
     idDrink?: string;
     strDrink: string;
-    strAlcoholic: boolean;
+    strAlcoholic: string;
     strDrinkThumb: string;
 }
 

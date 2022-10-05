@@ -15,5 +15,5 @@ public class DrinkService {
         this.drinkRepo = drinkRepo;
     }
 
-    public List<Drink> getAllDrinks() {return drinkRepo.getAllDrinks();};
+    public List<Drink> getAllDrinks() {return drinkRepo.findAll();};
 }
