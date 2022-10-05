@@ -2,6 +2,7 @@ package com.example.backend.controller;
 
 
 import com.example.backend.model.Drink;
+import com.example.backend.model.DrinkDTO;
 import com.example.backend.service.DrinkService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,5 +22,5 @@ public class DrinkController {
     public List<Drink> getAllDrinks() {return drinkService.getAllDrinks();}
 
     @PostMapping
-    public Drink addNewDrink(@RequestBody Drink drink) {return drinkService.addNewDrink(drink);}
+    public Drink addNewDrink(@RequestBody DrinkDTO drink) {return drinkService.addNewDrink(drink);}
 }

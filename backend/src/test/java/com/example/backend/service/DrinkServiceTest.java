@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Drink;
+import com.example.backend.model.DrinkDTO;
 import com.example.backend.repositiory.DrinkRepo;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -40,23 +41,24 @@ class DrinkServiceTest {
     @Test
     void addDrink() {
         //GIVEN
-        Drink dummyDrink = new Drink("", "", "", "");
-        Drink expectedDrink = new Drink("1", "", "", "");
+        DrinkDTO dummyDrinkDTO = new DrinkDTO( "", "", "");
+        Drink dummyDrink = new Drink("1", "", "", "");
 
-        when(drinkRepo.save(dummyDrink)).thenReturn(
-                Drink.builder()
-                        .idDrink("1")
-                        .strDrink(dummyDrink.getStrDrink())
-                        .alcoholic(dummyDrink.getAlcoholic())
-                        .strDrinkThumb(dummyDrink.getStrDrinkThumb())
-                        .build());
+        when(drinkRepo.save(Drink.builder()
+                .idDrink("1")
+                .strDrink(dummyDrinkDTO.getStrDrink())
+                .alcoholic(dummyDrinkDTO.getAlcoholic())
+                .strDrinkThumb(dummyDrinkDTO.getStrDrinkThumb())
+                .build()))
+                .thenReturn(dummyDrink);
+
         when(idService.generateID()).thenReturn("1");
 
         //WHEN
-        Drink actual = drinkService.addNewDrink(dummyDrink);
+        Drink actual = drinkService.addNewDrink(dummyDrinkDTO);
 
         //THEN
-        assertEquals(expectedDrink, actual);
+        assertEquals(dummyDrink, actual);
     }
 
 

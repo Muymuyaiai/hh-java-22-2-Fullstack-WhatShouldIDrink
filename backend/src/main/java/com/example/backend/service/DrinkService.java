@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Drink;
+import com.example.backend.model.DrinkDTO;
 import com.example.backend.repositiory.DrinkRepo;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class DrinkService {
 
     public List<Drink> getAllDrinks() {return drinkRepo.findAll();};
 
-    public Drink addNewDrink(Drink drink){
+    public Drink addNewDrink(DrinkDTO drink){
         Drink newDrink = Drink.builder()
                 .idDrink(idService.generateID())
                 .strDrink(drink.getStrDrink())
