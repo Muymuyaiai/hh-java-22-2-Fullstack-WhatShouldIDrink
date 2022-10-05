@@ -11,9 +11,22 @@ public class DrinkService {
 
     private final DrinkRepo drinkRepo;
 
-    public DrinkService(DrinkRepo drinkRepo) {
+    private final IdService idService;
+
+    public DrinkService(DrinkRepo drinkRepo, IdService idService) {
         this.drinkRepo = drinkRepo;
+        this.idService = idService;
     }
 
     public List<Drink> getAllDrinks() {return drinkRepo.findAll();};
+
+    public Drink addNewDrink(Drink drink){
+        Drink newDrink = Drink.builder()
+                .idDrink(idService.generateID())
+                .strDrink(drink.getStrDrink())
+                .strDrinkThumb(drink.getStrDrinkThumb())
+                .alcoholic(drink.getAlcoholic())
+                .build();
+        return drinkRepo.save(newDrink);
+    };
 }

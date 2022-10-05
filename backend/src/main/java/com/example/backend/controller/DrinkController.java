@@ -3,9 +3,7 @@ package com.example.backend.controller;
 
 import com.example.backend.model.Drink;
 import com.example.backend.service.DrinkService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +19,7 @@ public class DrinkController {
 
     @GetMapping
     public List<Drink> getAllDrinks() {return drinkService.getAllDrinks();}
+
+    @PostMapping
+    public Drink addNewDrink(@RequestBody Drink drink) {return drinkService.addNewDrink(drink);}
 }

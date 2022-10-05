@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 class DrinkServiceTest {
 
     DrinkRepo drinkRepo = mock(DrinkRepo.class);
-    DrinkService drinkService = new DrinkService(drinkRepo);
+    IdService idService = mock(IdService.class);
+    DrinkService drinkService = new DrinkService(drinkRepo, idService);
 
     @Test
     void getAllDrinks_ShouldReturnAllDrinks(){
@@ -35,6 +35,20 @@ class DrinkServiceTest {
         // Then
         List<Drink> expected = List.of(drink1, drink2);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void addDrink() {
+        //GIVEN
+        Drink dummyDrink = new Drink("", "", "", "");
+        when(drinkRepo.save(dummyDrink)).thenReturn(dummyDrink);
+
+        //WHEN
+        Drink actual = drinkService.addNewDrink(dummyDrink);
+
+        //THEN
+        verify(drinkRepo).save(dummyDrink);
+        assertEquals(dummyDrink, actual);
     }
 
 

@@ -36,8 +36,5 @@ class DrinkControllerTest {
                     .andExpect(status().is(200))
                     .andExpect(content().string("""
                         [{"idDrink":"1","strDrink":"A1","alcoholic":"Alcoholic","strDrinkThumb":"https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg"}]"""));
-
-
-
     }
 }
