@@ -41,14 +41,22 @@ class DrinkServiceTest {
     void addDrink() {
         //GIVEN
         Drink dummyDrink = new Drink("", "", "", "");
-        when(drinkRepo.save(dummyDrink)).thenReturn(dummyDrink);
+        Drink expectedDrink = new Drink("1", "", "", "");
+
+        when(drinkRepo.save(dummyDrink)).thenReturn(
+                Drink.builder()
+                        .idDrink("1")
+                        .strDrink(dummyDrink.getStrDrink())
+                        .alcoholic(dummyDrink.getAlcoholic())
+                        .strDrinkThumb(dummyDrink.getStrDrinkThumb())
+                        .build());
+        when(idService.generateID()).thenReturn("1");
 
         //WHEN
         Drink actual = drinkService.addNewDrink(dummyDrink);
 
         //THEN
-        verify(drinkRepo).save(dummyDrink);
-        assertEquals(dummyDrink, actual);
+        assertEquals(expectedDrink, actual);
     }
 
 
