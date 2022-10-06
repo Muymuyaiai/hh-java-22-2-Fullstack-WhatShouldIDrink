@@ -26,7 +26,7 @@ public class DrinkService {
                 .idDrink(idService.generateID())
                 .strDrink(drink.getStrDrink())
                 .strDrinkThumb(drink.getStrDrinkThumb())
-                .alcoholic(drink.getAlcoholic())
+                .strAlcoholic(drink.getAlcoholic())
                 .build();
         return drinkRepo.save(newDrink);
     };

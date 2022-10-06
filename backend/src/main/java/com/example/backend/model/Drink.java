@@ -17,6 +17,6 @@ public class Drink {
     private String idDrink;
 
     private String strDrink;
-    private String alcoholic;
+    private String strAlcoholic;
     private String strDrinkThumb;
 }

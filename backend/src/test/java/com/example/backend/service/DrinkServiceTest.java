@@ -47,7 +47,7 @@ class DrinkServiceTest {
         when(drinkRepo.save(Drink.builder()
                 .idDrink("1")
                 .strDrink(dummyDrinkDTO.getStrDrink())
-                .alcoholic(dummyDrinkDTO.getAlcoholic())
+                .strAlcoholic(dummyDrinkDTO.getAlcoholic())
                 .strDrinkThumb(dummyDrinkDTO.getStrDrinkThumb())
                 .build()))
                 .thenReturn(dummyDrink);
