@@ -1,4 +1,5 @@
 import Drink from "../../model/Drink";
+import "./DrinkStyled.css";
 
 
 type DrinkComponentProps = {
@@ -8,9 +9,9 @@ type DrinkComponentProps = {
 
 export default function DrinkComponent(props:DrinkComponentProps){
     return(
-        <article>
-            <h2>{props.drink.strDrink}</h2>
-            <img src={props.drink.strDrinkThumb} alt={props.drink.strDrink}/>
+        <article className={"drink"}>
+            <h2 className={"drinkname"}>{props.drink.strDrink}</h2>
+            <img className={"drinkpic"} src={props.drink.strDrinkThumb} alt={props.drink.strDrink}/>
         </article>
     )
 }

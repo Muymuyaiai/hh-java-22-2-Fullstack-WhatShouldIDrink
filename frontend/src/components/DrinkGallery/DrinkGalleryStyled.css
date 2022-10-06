@@ -1,0 +1,12 @@
+.gallery{
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 1em;
+
+}

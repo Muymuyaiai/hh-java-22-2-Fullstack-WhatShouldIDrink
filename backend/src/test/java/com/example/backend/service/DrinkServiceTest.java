@@ -24,8 +24,8 @@ class DrinkServiceTest {
 
         // GIVEN
 
-        Drink drink1 = new Drink("1","A1","Alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
-        Drink drink2 = new Drink("2","Big Red","Alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
+        Drink drink1 = new Drink("1","A1","alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
+        Drink drink2 = new Drink("2","Big Red","alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
 
         List<Drink> drinkList = new ArrayList<>(List.of(drink1, drink2));
         when(drinkRepo.findAll()).thenReturn(drinkList);
