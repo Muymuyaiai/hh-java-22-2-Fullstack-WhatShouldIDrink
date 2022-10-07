@@ -1,0 +1,25 @@
+.drink{
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 1em;
+    padding: 2em;
+    box-shadow: inset 0px 0px 16px 9px rgba(255,255,255,0.5);
+
+}
+
+.drink:hover{
+    box-shadow: inset 0px 0px 16px 9px rgba(0,255,0,0.8);
+    border: 2px solid rgba(0,255,0,0.8);
+}
+
+.drinkpic{
+    width: 7em;
+}
+
+.drinkname{
+    font-size: smaller;
+}
