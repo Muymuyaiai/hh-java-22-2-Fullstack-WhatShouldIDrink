@@ -37,7 +37,6 @@ type Drink = {
     strMeasure13?: string;
     strMeasure14?: string;
     strMeasure15?: string;
-
 }
 
 export default Drink;
