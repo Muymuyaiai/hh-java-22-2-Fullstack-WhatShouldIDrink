@@ -11,10 +11,6 @@ type DrinkGalleryProps = {
 
 export default function DrinkGallery(props:DrinkGalleryProps){
 
-    const filtered = props.drinks.filter(drink => {
-        return drink.strAlcoholic === "Alcoholic";
-    });
-
     return (
     <section className={"gallery"}>
         {props.drinks
