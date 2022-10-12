@@ -1,0 +1,44 @@
+.detailCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 99%;
+    height: 98%;
+    z-index: 300;
+    padding: 3px;
+    position: relative;
+    left: 0.25%;
+    top: 0.5%;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: rgba(40,44,52,0.95);
+    border-radius: 1em;
+}
+.detailHeader{
+    position: absolute;
+    top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.drinkValueWrapper{
+    width: 100%;
+    position: absolute;
+    top: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.drinkImg{
+    max-width: 15em;
+}
+.red{
+    color: #ea0e74;
+}
+.green{
+    color: lime;
+}
+
