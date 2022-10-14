@@ -20,7 +20,7 @@ export default function SearchForDrinks(props: DrinkComponentProps) {
             </div>
 
             <div className={"drinks"}>
-                {filteredDrinks.length === 0 ? <h1>No drink found. Maybe you are a little too drunk? </h1>
+                {filteredDrinks.length === 0 ? <h1>No drink found</h1>
                     : filteredDrinks
                         .map((drink) =>
                             <div className={"drink-component"}><DrinkComponent drink={drink}/></div>)}
