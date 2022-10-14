@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import useDrink from "./hooks/useDrink";
 import DrinkReel from "./components/DrinkReel/DrinkReel";
+import DrinkSuggestion from "./components/DrikSuggestion/DrinkSuggestion";
 
 function App() {
 
@@ -11,6 +12,7 @@ const {drinks} = useDrink();
   return (
     <div className="App">
       <header className="App-header">
+          <DrinkSuggestion drinks={drinks}/>
           <h2>All drinks</h2>
           <DrinkReel drinks={drinks} filter={""} category={""}/>
           <h2>All shots</h2>
