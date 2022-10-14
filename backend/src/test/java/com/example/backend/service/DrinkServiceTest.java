@@ -4,7 +4,6 @@ import com.example.backend.model.Drink;
 import com.example.backend.model.DrinkDTO;
 import com.example.backend.repositiory.DrinkRepo;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,21 +18,20 @@ class DrinkServiceTest {
     IdService idService = mock(IdService.class);
     DrinkService drinkService = new DrinkService(drinkRepo, idService);
 
-    /*@Test
+    @Test
     void getAllDrinks_ShouldReturnAllDrinks(){
 
         // GIVEN
-
-        Drink drink1 = new Drink("1","A1","alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
-        Drink drink2 = new Drink("2","Big Red","alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg");
+        Drink drink1 = new Drink("1","A1","Alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+        Drink drink2 = new Drink("2","Big Red","Alcoholic", "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
         List<Drink> drinkList = new ArrayList<>(List.of(drink1, drink2));
         when(drinkRepo.findAll()).thenReturn(drinkList);
 
-        // When
+        // WHEN
         List<Drink> actual = drinkService.getAllDrinks();
 
-        // Then
+        // THEN
         List<Drink> expected = List.of(drink1, drink2);
         assertEquals(expected, actual);
     }
@@ -41,25 +39,34 @@ class DrinkServiceTest {
     @Test
     void addDrink() {
         //GIVEN
-        DrinkDTO dummyDrinkDTO = new DrinkDTO( "", "", "");
-        Drink dummyDrink = new Drink("1", "", "", "");
+        /*Gleiche Schreibweise:
+        DrinkDTO drinkDTO = new DrinkDTO("B52","Alcoholic","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+        Drink expected = new Drink("1","B52","Alcoholic","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");*/
 
-        when(drinkRepo.save(Drink.builder()
+        DrinkDTO drinkDTO = DrinkDTO.builder()
+                .strDrink("B52")
+                        .strAlcoholic("Alcoholic")
+                                .build();
+
+        Drink expected = Drink.builder()
                 .idDrink("1")
-                .strDrink(dummyDrinkDTO.getStrDrink())
-                .strAlcoholic(dummyDrinkDTO.getAlcoholic())
-                .strDrinkThumb(dummyDrinkDTO.getStrDrinkThumb())
-                .build()))
-                .thenReturn(dummyDrink);
+                .strDrink("B52")
+                        .strAlcoholic("Alcoholic")
+                                .build();
 
-        when(idService.generateID()).thenReturn("1");
+
+        //when(idService.generateID()).thenReturn("1");
+        when(drinkRepo.save(any())).thenReturn(Drink.builder()
+                .idDrink("1")
+                .strDrink(drinkDTO.getStrDrink())
+                .strAlcoholic(drinkDTO.getStrAlcoholic())
+                .build());
 
         //WHEN
-        Drink actual = drinkService.addNewDrink(dummyDrinkDTO);
+        Drink actual = drinkService.addNewDrink(drinkDTO);
 
         //THEN
-        assertEquals(dummyDrink, actual);
+        assertEquals(expected, actual);
     }
-*/
 
 }
