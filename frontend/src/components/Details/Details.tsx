@@ -1,6 +1,6 @@
 import Drink from "../../model/Drink";
 import "./DetailStyled.css";
-import {useState} from "react";
+
 
 type DetailProps ={
     drink : Drink;
@@ -15,7 +15,7 @@ export default function Details(props:DetailProps){
             <h2>{props.drink.strDrink}</h2>
             </section>
             <section className={"drinkValueWrapper"}>
-            <img className={"drinkImg"} src={props.drink.strDrinkThumb}/>
+            <img className={"drinkImg"} src={props.drink.strDrinkThumb} alt={props.drink.strDrink}/>
              <div>
                  <p className={`${props.drink.strAlcoholic === "Alcoholic" ? "red":"green"}`}>{props.drink.strAlcoholic}</p>
             <p>Category:{" "+props.drink.strCategory}</p>
