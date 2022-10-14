@@ -24,7 +24,10 @@ export default function DrinkComponent(props:DrinkComponentProps){
                  alt={props.drink.strDrink}
                  onClick={()=>{setDetails(!details)}}/>
         </article>
-            {details && <div className={"shadow"} onClick={()=>setDetails(!details)}><Details drink={props.drink}/></div>}
+            {details && <div className={"shadow"}
+                             onClick={()=>setDetails(!details)}>
+                <Details drink={props.drink}/>
+            </div>}
         </section>
     )
 }
