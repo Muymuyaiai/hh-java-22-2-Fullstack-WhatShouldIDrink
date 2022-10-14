@@ -41,7 +41,7 @@ export default function DrinkSuggestion(props:DrinkSuggestionProps){
     const suggestedDrink:Drink = (randomDrink(filterDrinksByDay(filterDrinksByHours(props.drinks))));
 
     return (
-        <section className="container"style={{backgroundImage:'url('+suggestedDrink?.strDrinkThumb+')' }}>
+        <section className="container" style={{backgroundImage:'url('+suggestedDrink?.strDrinkThumb+')' }}>
 
             <h3>It's {weekDay[day-1]} {hours}:{minutes}</h3>
             <h3>We're suggesting you to drink</h3>
