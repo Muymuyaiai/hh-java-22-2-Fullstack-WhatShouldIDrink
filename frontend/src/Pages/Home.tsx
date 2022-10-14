@@ -1,7 +1,9 @@
-import DrinkSuggestion from "../DrikSuggestion/DrinkSuggestion";
-import DrinkReel from "../DrinkReel/DrinkReel";
-import useDrink from "../../hooks/useDrink";
-
+import DrinkSuggestion from "../components/DrinkSuggestion/DrinkSuggestion";
+import DrinkReel from "../components/DrinkReel/DrinkReel";
+import useDrink from "../hooks/useDrink";
+import {NavLink} from "react-router-dom";
+import logo from "./cocktails-logo-nobg.png";
+import "./Home.css";
 
 export default function Home(){
 
@@ -9,6 +11,10 @@ export default function Home(){
 
     return(
         <>
+            <section>
+                <NavLink to={"/search"}>Search</NavLink>
+                <img className={"logo"} src={logo} alt={"Logo"} />
+            </section>
             <DrinkSuggestion drinks={drinks}/>
             <h2>All drinks</h2>
             <DrinkReel drinks={drinks} filter={""} category={""}/>

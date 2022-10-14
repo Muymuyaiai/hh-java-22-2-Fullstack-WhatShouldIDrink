@@ -6,8 +6,12 @@
     background-position: right;
     background-color: rgba(0, 0, 0, 0.37);
     padding: 20px;
+    color: #e2bc76;
+    font-family: Baskerville, serif;
 }
 
 h1 {
-    font-size: 300%;
+    color: #e2bc76;
+    font-family: Baskerville, serif;
+    font-size: 3em;
 }

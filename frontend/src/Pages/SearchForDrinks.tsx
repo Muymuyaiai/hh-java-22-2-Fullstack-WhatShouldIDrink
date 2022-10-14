@@ -1,6 +1,6 @@
-import Drink from "../../model/Drink";
+import Drink from "../model/Drink";
 import {useState} from "react";
-import DrinkComponent from "../DrinkComponent/DrinkComponent";
+import DrinkComponent from "../components/DrinkComponent/DrinkComponent";
 
 
 type DrinkComponentProps = {

@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import useDrink from "./hooks/useDrink";
 import {HashRouter, Route, Routes} from "react-router-dom";
-import SearchForDrinks from "./components/Pages/SearchForDrinks";
-import Home from "./components/Pages/Home";
+import SearchForDrinks from "./Pages/SearchForDrinks";
+import Home from "./Pages/Home";
 
 function App() {
 
