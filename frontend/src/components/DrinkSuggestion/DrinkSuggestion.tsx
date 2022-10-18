@@ -40,13 +40,38 @@ export default function DrinkSuggestion(props:DrinkSuggestionProps){
 
     const suggestedDrink:Drink = (randomDrink(filterDrinksByDay(filterDrinksByHours(props.drinks))));
 
-    return (
-        <section className="container" style={{backgroundImage:'url('+suggestedDrink?.strDrinkThumb+')' }}>
 
+    return (
+        <section className="container"
+                 style={{backgroundImage:'url('+suggestedDrink?.strDrinkThumb+')' }}>
+            <div className="left-container">
             <h3>It's {weekDay[day-1]} {hours}:{minutes}</h3>
             <h3>We're suggesting you to drink</h3>
             <h1>{suggestedDrink?.strDrink}</h1>
+            </div>
+            <div className="middle-container">
+            <h3>Ingredients</h3>
+            <ul>
+                {suggestedDrink?.strIngredient1 ? <li>{suggestedDrink.strIngredient1 + " = " + suggestedDrink.strMeasure1}</li>:''}
+                {suggestedDrink?.strIngredient2 ? <li>{suggestedDrink.strIngredient2 + " = " + suggestedDrink.strMeasure2}</li>:''}
+                {suggestedDrink?.strIngredient3 ? <li>{suggestedDrink.strIngredient3 + " = " + suggestedDrink.strMeasure3}</li>:''}
+                {suggestedDrink?.strIngredient4 ? <li>{suggestedDrink.strIngredient4 + " = " + suggestedDrink.strMeasure4}</li>:''}
+                {suggestedDrink?.strIngredient5 ? <li>{suggestedDrink.strIngredient5 + " = " + suggestedDrink.strMeasure5}</li>:''}
+                {suggestedDrink?.strIngredient6 ? <li>{suggestedDrink.strIngredient6 + " = " + suggestedDrink.strMeasure6}</li>:''}
+                {suggestedDrink?.strIngredient7 ? <li>{suggestedDrink.strIngredient7 + " = " + suggestedDrink.strMeasure7}</li>:''}
+                {suggestedDrink?.strIngredient8 ? <li>{suggestedDrink.strIngredient8 + " = " + suggestedDrink.strMeasure8}</li>:''}
+                {suggestedDrink?.strIngredient9 ? <li>{suggestedDrink.strIngredient9 + " = " + suggestedDrink.strMeasure9}</li>:''}
+                {suggestedDrink?.strIngredient10 ? <li>{suggestedDrink.strIngredient10 + " = " + suggestedDrink.strMeasure10}</li>:''}
+                {suggestedDrink?.strIngredient11 ? <li>{suggestedDrink.strIngredient11 + " = " + suggestedDrink.strMeasure11}</li>:''}
+                {suggestedDrink?.strIngredient12 ? <li>{suggestedDrink.strIngredient12 + " = " + suggestedDrink.strMeasure12}</li>:''}
+                {suggestedDrink?.strIngredient13 ? <li>{suggestedDrink.strIngredient13 + " = " + suggestedDrink.strMeasure13}</li>:''}
+                {suggestedDrink?.strIngredient14 ? <li>{suggestedDrink.strIngredient14 + " = " + suggestedDrink.strMeasure14}</li>:''}
+                {suggestedDrink?.strIngredient15 ? <li>{suggestedDrink.strIngredient15 + " = " + suggestedDrink.strMeasure15}</li>:''}
+            </ul>
+            <p>{suggestedDrink?.strInstructions}</p>
+            </div>
 
         </section>
+
     )
 }

@@ -35,6 +35,8 @@ export default function Details(props:DetailProps){
                  <ul>
                  {toIngLst(props.drink).map((ingredient) => <li>{ingredient}</li>)}
                  </ul>
+                 <h3>Instructions</h3>
+                 <p>{props.drink.strInstructions}</p>
              </div>
             </section>
         </article>
