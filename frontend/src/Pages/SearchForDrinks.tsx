@@ -1,7 +1,7 @@
 import Drink from "../model/Drink";
 import {useState} from "react";
 import DrinkComponent from "../components/DrinkComponent/DrinkComponent";
-
+import "./SearchForDrinks.css"
 
 type DrinkComponentProps = {
     drink: Drink [];
@@ -14,7 +14,9 @@ export default function SearchForDrinks(props: DrinkComponentProps) {
     const filteredDrinks = props.drink.filter(drink => drink.strDrink.toLowerCase().includes(inputToSearch.toLowerCase()));
 
     return (
-        <section>
+        <div className="background">
+        <section className="search-section">
+            <h1>Search for drinks</h1>
             <div className={"search-bar"}>
                 <input onChange={(event) => setInput(event.target.value)}/>
             </div>
@@ -26,6 +28,7 @@ export default function SearchForDrinks(props: DrinkComponentProps) {
                             <div className={"drink-component"}><DrinkComponent drink={drink}/></div>)}
             </div>
         </section>
+        </div>
 
     )
 }

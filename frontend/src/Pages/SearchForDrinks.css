@@ -1,0 +1,30 @@
+.search-section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    gap: 2em;
+    justify-items: center;
+    margin: 2em auto;
+
+}
+
+
+
+.drinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+h1 {
+   margin: 0 auto;
+    padding: 0.2em;
+}
+
+.search-bar {
+    border: solid #e2bc76;
+    border-width: 0.5em;
+}
